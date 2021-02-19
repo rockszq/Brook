@@ -17,6 +17,6 @@ yum install ca-certificates -y
 
 下载使用
 ```
-wget -N --no-check-certificate https://raw.githubusercontent.com/XOS/Brook/master/brook-pf.sh && chmod +x brook-pf.sh && bash brook-pf.sh
+wget -N --no-check-certificate https://gitee.com/ten/Brook/raw/master/brook-pf.sh && chmod +x brook-pf.sh && bash brook-pf.sh
 
 ```

@@ -10,7 +10,7 @@ export PATH
 #	Blog: https://www.nange.cn/
 #=================================================
 
-sh_ver="1.0.6"
+sh_ver="2.0.6"
 filepath=$(cd "$(dirname "$0")"; pwd)
 file_1=$(echo -e "${filepath}"|awk -F "$0" '{print $1}')
 file="/usr/local/brook-pf"
@@ -102,14 +102,14 @@ Download_brook(){
 }
 Service_brook(){
 	if [[ ${release} = "centos" ]]; then
-		if ! wget https://raw.githubusercontent.com/ss-daily-backup/brook-relay-doubi/master/dependent/brook-pf_centos -O /etc/init.d/brook-pf; then
+		if ! wget https://gitee.com/ten/Brook/raw/master/Dependent/brook-pf-centos.sh -O /etc/init.d/brook-pf; then
 			echo -e "${Error} Brook服务 管理脚本下载失败 !" && exit 1
 		fi
 		chmod +x /etc/init.d/brook-pf
 		chkconfig --add brook-pf
 		chkconfig brook-pf on
 	else
-		if ! wget https://raw.githubusercontent.com/ss-daily-backup/brook-relay-doubi/master/dependent/brook-pf_debian -O /etc/init.d/brook-pf; then
+		if ! wget https://gitee.com/ten/Brook/raw/master/Dependent/brook-pf-debian.sh -O /etc/init.d/brook-pf; then
 			echo -e "${Error} Brook服务 管理脚本下载失败 !" && exit 1
 		fi
 		chmod +x /etc/init.d/brook-pf
@@ -609,7 +609,6 @@ if [[ "${action}" == "monitor" ]]; then
 	crontab_monitor_brook
 else
 	echo && echo -e "  Brook 端口转发 一键管理脚本 ${Red_font_prefix}[v${sh_ver}]${Font_color_suffix}
-  ---- Toyo | doub.io/wlzy-jc37 ----
   
  ${Green_font_prefix} 0.${Font_color_suffix} 升级脚本  （已删除该功能，默认安装长期试验后的稳定版）
 ————————————
