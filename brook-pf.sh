@@ -94,8 +94,10 @@ Download_brook(){
 	cd ${file}
 	if [[ ${bit} == "x86_64" ]]; then
 		wget -N -O "brook" "https://github.com/txthinking/brook/releases/download/v20200909/brook_linux_amd64"
+		mv brook_linux_amd64 brook
 	else
 		wget -N -O "brook" "https://github.com/txthinking/brook/releases/download/v20200909/brook_linux_386"
+		mv brook_linux_386 brook
 	fi
 	[[ ! -e "brook" ]] && echo -e "${Error} Brook 下载失败 !" && exit 1
 	chmod +x brook
