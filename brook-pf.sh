@@ -4,7 +4,7 @@ export PATH
 
 #=================================================
 #	System Required: CentOS/Debian/Ubuntu
-#	Description: Brook
+#	Description: Brook 转发一键安装脚本
 #	Version: 2.0.6
 #	Modify: 楠格
 #	Blog: https://www.nange.cn/
