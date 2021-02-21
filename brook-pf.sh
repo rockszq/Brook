@@ -134,7 +134,7 @@ Installation_dependency(){
 Read_config(){
 	[[ ! -e ${brook_conf} ]] && echo -e "${Error} Brook 配置文件不存在 !" && exit 1
 	user_all=$(cat ${brook_conf})
-	user_all_num=$(echo "${user_all}"|wc --fromto)
+	user_all_num=$(echo "${user_all}"|wc -l)
 	[[ -z ${user_all} ]] && echo -e "${Error} Brook 配置文件中用户配置为空 !" && exit 1
 }
 Set_pf_Enabled(){
@@ -499,7 +499,7 @@ Uninstall_brook(){
 		[[ ! -z $PID ]] && kill -9 ${PID}
 		if [[ -e ${brook_conf} ]]; then
 			user_all=$(cat ${brook_conf}|sed '/^\s*$/d')
-			user_all_num=$(echo "${user_all}"|wc --fromto)
+			user_all_num=$(echo "${user_all}"|wc -l)
 			if [[ ! -z ${user_all} ]]; then
 				for((integer = 1; integer <= ${user_all_num}; integer++))
 				do
