@@ -13,13 +13,14 @@ apt-get install ca-certificates -y
 yum install ca-certificates -y
 ```
 
-##下载使用
-国外
+下载使用
+
 ```
+#国外
 wget -N --no-check-certificate https://git.io/brook-pf.sh && chmod +x brook-pf.sh && bash brook-pf.sh
 ```
 
-国内
 ```
+#国内
 wget -N --no-check-certificate https://gitee.com/ten/Brook/raw/master/brook-pf.sh && chmod +x brook-pf.sh && bash brook-pf.sh
 ```
